@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // function printBook(author, title){
+        //     author = author || "Unknown";
+        //     title = title || "Unknown";
+        //     console.log(author,title);
+        // }
+        // printBook();
+        // Default parameters
+        // function printBook(author = "Unknown", title = "Unknown"){
+        //     console.log(author, title);
+        // }
+        // printBook();
+        // printBook(undefined,"xyz")
+
+        // Rest parameters
+        function printBook(author,...titles){
+            console.log(author,titles);
+        }
+        printBook("xyz","a","b","c");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

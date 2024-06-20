@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var o = {};
+        // console.log(o) // contains prototype
+        // var o = Object.create(null);
+        // console.log(o); // No properties/prototype
+
+        // var person = { name: "tushar", age: "22", isRankedOne: true}
+        // var player = Object.create(person) // sets person as the prototype of player
+        // player.sport = "Cricket"
+        // console.log(player)
+
+        function Car(name, speed){
+            this.name = name || "tesla";
+            this.speed = speed || 300;
+            this.accelerate = function() {
+                speed += 20;
+            }
+        }
+
+        function SuperCar(){
+            this.isCool = true;
+        }
+
+        SuperCar.prototype = new Car(); // leads to property lookup -> search into entire prototypical chain. if finds then return -> SC.name (which is sort of inherited)
+
+        var SC = new SuperCar();
+        SC.name = "BMW"
+        console.log(SC)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

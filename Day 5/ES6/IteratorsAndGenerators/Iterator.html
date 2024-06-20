@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cars = ["BMW", "AUDI", "MERC"];
+        for (const car of cars){
+            console.log(car);
+        }
+
+        // var company = { name: "Mathworks", city: "Bangalore"};
+        // for(const prop of company){
+        //     console.log(prop);
+        // }
+
+        let itr = cars[Symbol.iterator]();
+        console.log(itr.next());
+        console.log(itr.next());
+        console.log(itr.next());
+        console.log(itr.next());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

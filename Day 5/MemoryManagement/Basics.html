@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Test(){
+            var company = { name: "Mathworks", city: "Bangalore"};
+            return company;
+        }
+        Test();
+
+        // Closure
+        // function Outer(){
+        //     var msg = "Hello"; // retained
+        //     return function(){
+        //         console.log(msg);
+        //     }
+        // }
+
+        // var Inner = Outer();
+        // Inner();
+
+        // NamedFunctions + destructuring
+        function Outer(){
+            let obj =  {msg: "Hello"};
+            Inner(obj);
+        }
+
+        function Inner({msg}){
+            console.log(msg)
+        }
+        Outer();
+        // Inner();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

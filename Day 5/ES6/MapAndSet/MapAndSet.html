@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cityMap = new Map();
+        cityMap.set("Bareilly","UP");
+        cityMap.set("Bangalore","Karnataka");
+        cityMap.set("Mumbai", "Maharashtra");
+
+        let itr = cityMap.entries();
+        console.log(itr.next(0));
+        for (const o of cityMap){
+            console.log(o)
+        }
+
+        var mySet = new Set();
+        mySet.add({first: "Tushar", last: "Sharma"});
+        mySet.add({first: "Tushar", last: "Sharma"});
+        mySet.add({first: "Tushar", last: "Sharma"});
+        for(const i of mySet){
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

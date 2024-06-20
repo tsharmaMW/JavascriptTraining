@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. Object Literal Syntax
+        // var person = {
+        //     name: "Tushar",
+        //     role: "EDG",
+        //     getDetails: function (){
+        //         console.log(this.name + " is in " + this.role);
+        //     }
+        // }
+        // person.getDetails();
+
+        // var JSONData = JSON.stringify(person); // send to server
+        // console.log(JSONData);
+        // var jsObject = JSON.parse(JSONData); /// data from server
+        // console.log(jsObject);
+
+        // 2. Object Object (constructor)
+        //  var  obj = new Object();
+        //  obj.xyz = "123";
+        //  console.log(obj);
+
+        // 3. Custom Constructor
+
+            // function Car(name, speed) {
+            //     this.name = name || "BMW"; // shortcircuiting -> Using truthier value instead of falsey
+            //     this.speed = speed || 200;
+            //     this.accelerate = function() {
+            //         this.speed += 20;
+            //     }
+            // }
+            // var carObj = new Car("tesla", 300);
+            // var carObj2 = new Car();
+            // carObj.accelerate();
+            // console.log(carObj);
+            // console.log(carObj2)
+
+
+            // function Emp(){
+            //     this.salary = 100;
+            //     setTimeout(function () {
+            //         console.log(this); // -> it gets called in windows context (the origiinal context of Emp was lost)
+            //         console.log(this.salary); // won't work!!
+            //     },2000);
+            // }
+            // var emp = new Emp();
+
+
+            // function Emp(){
+            //     this.salary = 100;
+            //     var _this = this;
+            //     setTimeout(function () {
+            //         console.log(_this.salary); // copied context into a closure variable (inner function is in windows context but still they can access closure variables (variables of the parent function))
+            //     },2000);
+            // }
+            // var emp = new Emp();
+
+            // function Emp(){
+            //     this.salary = 100;
+            //     setTimeout(function () {
+            //         Emp.call(this);
+            //         console.log(this.salary);
+            //     },2000);
+            // }
+            // var emp = new Emp();
+
+            function Emp() {
+                this.salary = 100;
+                setTimeout(Callback.bind(this),2000);
+            }
+
+            function Callback() {
+                console.log(this.salary);
+            }
+
+            var emp = new Emp();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

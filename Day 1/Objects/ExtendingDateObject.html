@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        Date.prototype.getDayName = function(){
+            switch( this.getDay()){
+                case 1:
+                    return "Mon";
+                case 2:
+                    return "Tues";
+                case 3:
+                    return "Wed";
+                case 4:
+                    return "Thur";
+                case 5:
+                    return "Fri";
+                case 6:
+                    return "Sat";
+                case 7:
+                    return "Sun";
+                default:
+                    break;
+            }
+        };
+        var date = new Date();
+        console.log(date.getDayName());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var Add = (x,y) => {
+        //     return x + y;
+        // }
+        // var Add = (x,y) => x + y;
+        // console.log(Add(20,30))
+
+        // var cars = ["BMW", "Audi", "Jaguar"];
+        // // cars.forEach(function(car){
+        // //     console.log(car);
+        // // })
+        // cars.forEach(car=>console.log(car))
+        // var Test = () => console.log("Testing")
+        // Test();
+
+        // function Emp(){
+        //     this.salary = 100;
+        //     setTimeout(function(){
+        //         console.log(this.salary)
+        //     },2000);
+        // }
+        // var emp = new Emp();
+        function Emp() {
+            this.salary = 100;
+            setTimeout(()=> console.log(this.salary),2000); // arrow functions binds the function at the time of creation to the context in which it is invoked
+        }
+        var emp = new Emp();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

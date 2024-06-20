@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function HandleHeavyLifting(){
+            var worker = new Worker("workerscript.js");
+            worker.postMessage("Message from main thread");
+            worker.onmessage = function(msg){
+                console.log(msg.data)
+            }
+            
+        }
+        function ClickHandler(){
+            console.log("You clicked")
+        }
+    </script>
+</head>
+<body>
+    <button onclick="HandleHeavyLifting()"> Start heavy lifting task</button>
+    <button onclick="ClickHandler()"> Click me</button>
+</body>
+</html>

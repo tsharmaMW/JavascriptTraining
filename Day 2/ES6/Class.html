@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class Car {
+        //     name = "BMW";
+        //     speed = 200;
+        // }
+        class Car {
+            constructor(name = "DefaultName", speed = 70){
+                this.name = name;
+                this.speed = speed;
+            }
+            accelerate(){
+                //console.log(this.name + " is running at " + this.speed);
+                return `${this.name} is running at ${this.speed}`;
+            }
+        }
+        var carObj = new Car("BMW",200);
+        console.log(carObj.accelerate());
+
+        class SuperCar extends Car {
+            constructor(name,speed,isCool){
+                super(name,speed);
+                this.isCool = isCool;
+            }
+            accelerate(){
+                return `${super.accelerate()}. Also, is it cool? ${this.isCool}`;
+            }
+        }
+        var sc = new SuperCar("Aston Martin", 300, true);
+        console.log(sc.accelerate());
+
+        // String templates
+        // var multiLineStr = `First Line
+        // Second Line
+        // Third Line`;
+        // console.log(multiLineStr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

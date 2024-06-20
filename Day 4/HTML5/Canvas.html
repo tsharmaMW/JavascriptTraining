@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Draw(){
+            let myCanvas = document.querySelector("#mycanvas");
+            let ctx = myCanvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(50,50);
+            ctx.moveTo(100,100);
+            ctx.moveTo(50,10);
+            ctx.closePath();
+            ctx.fillStyle = "green";
+            ctx.fill();
+            ctx.stroke();
+        }
+        window.addEventListener("DOMContentLoaded",Draw)
+    </script>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+</body>
+</html>

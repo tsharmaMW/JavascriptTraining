@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+        <input type="button" value="Add" onclick="handleAdd()"/>
+        <input type="button" value="Remove" onclick="handleRemove()"/>
+    </div>
+
+    <script>
+        // Registering event using DOM properties
+        let btn = document.createElement("input");
+        btn.type = "button";
+        btn.value = "Check console log";
+        // btn.onclick = function () {
+        //     console.log("Clicked!");
+        // }
+        let Handler = ()=>console.log("clicked");
+        let container = document.getElementById("container");
+        container.appendChild(btn);
+        handleAdd = () => {
+            btn.addEventListener("click",Handler);
+        }
+        handleRemove = () => {
+            btn.removeEventListener("click",Handler);
+        }
+
+
+    </script>
+  </body>
+</html>

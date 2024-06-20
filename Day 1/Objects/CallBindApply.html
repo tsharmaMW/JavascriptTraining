@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person = {
+            name: "tushar",
+            greet: function (theGreeting) {
+                console.log(theGreeting + " " + this.name + " !");
+            }
+        }
+        person.greet("Hello");
+        var anotherPerson = { name: "sharma"};
+        person.greet.call(anotherPerson, 'Yo'); //borrowed function from one context
+        // through call we change the context of person's greet method to "anotherPerson's" context
+        person.greet.apply(anotherPerson, ["Hi"]); //same as call -> Just pass parameters as array
+        var greetBoundWithAnotherPerson = person.greet.bind(anotherPerson);
+        greetBoundWithAnotherPerson("Bye")
+
+
+
+        function Shape() {
+            this.length = 10;
+            this.breath = 15;
+        }
+
+        function Rect() {
+            Shape.call(this); // this adds the current context of rect object whenever it is created to shape and attaches everything from Shape object
+            this.isSquare = false;
+        }
+
+        var r = new Rect();
+        console.log(r)
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // Nested Functions
+
+        // function Outer(){
+        //     var outerVar = "Outer...";
+        //     function Inner(){
+        //         console.log(outerVar);
+        //         console.log("Inner...");
+        //     }
+        //     Inner();
+        // }
+        // Outer();
+
+
+        // function Outer(){
+        //     var outerVar = "Outer..."; // Closure variable *IMP
+        //     return function (){
+        //         console.log(outerVar);
+        //         console.log("Inner...");
+        //     }
+        // }
+        // var Inner = Outer();
+        // Inner();
+
+        function Counter() {
+            var count = 0; // closure variable -> it is static (same variable in all function calls)
+            return function () {
+                console.log(++count);
+            }
+        }
+        var myCounter = Counter();
+        myCounter();
+        myCounter();
+        myCounter();
+        myCounter();
+        myCounter();
+        myCounter();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

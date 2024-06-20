@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function* Generator() {
+            console.log("Generator - First Line!")
+            yield 10;
+            console.log("Line after yeild !")
+            return 10;
+        }
+        let itr = Generator();
+        console.log(itr.next());
+        console.log(itr.next());
+
+        function* infinite(){
+            let index = 0;
+            while(true){
+                yield index++;
+            }
+        }
+        const generator = infinite();
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

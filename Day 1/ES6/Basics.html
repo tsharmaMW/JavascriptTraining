@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // can be accessed globally
+        // if(true) {
+        //     var x = 10;
+        // }
+        // let - block scoping
+        // if (true) {
+        //     let y = 5;
+        // }
+        // let - stops variable hoisting
+        // console.log(x);
+        // let x = 10;
+        // let doesn't allow redeclaring the same variable in the same block
+        // let x = 10;
+        // // let x = 5; // error
+        // {
+        //     let x = 20; // No error as different scope
+        // }
+
+        // const PI; // error without definition
+        // const PI = 3.14; // block scoping
+        // PI = 3.145; // cannot re-assign
+
+        // const company = { name: "Mathoworks" , location: "Bengaluru"};
+        // // company = {}; //error
+        // company.name = "Mathworks"; // works
+
+        // const company = { name: "Mathoworks" , location: "Bengaluru"};
+        // let c = company;
+        // c.name = "XYZ"; // company.name also becomes XYZ. Why?
+        // company stores the reference to the object in heap
+        // the reference gets copied to c, which modifies the actual value at heap location
+
+        // Spread operator - Arrays & Objects
+        // var cars = ["Audi", "BMW", "MERC"];
+        // var moreCars = ["Tesla", "Jaguar"];
+        // var allCars = [...cars, ...moreCars];
+        // console.log(allCars)
+
+        // var person = { name: "tushar", isRankedOne: "true"};
+        // var player = {...person, sport: "Cricket"}; // if same values are present, the latter overrides the previous one
+        // console.log(player)
+
+        // Destructuring - Arrays & Objects
+        // let cars = ["Audi", "BMW", "MERC"];
+        // let [firstCar, secondCar] = cars;
+        // let company = { name: "Mathoworks" , location: "Bengaluru"};
+        // let {name} = company; 
+        //NESTED
+        // let company = { 
+        //     name: "Mathoworks" , 
+        //     location: "Bengaluru",
+        //     training: { details: { name: "Advanced Javascript", duration: "5 days"}}
+        // };
+        // let {training : 
+        //         {
+        //             details: {name: courseName} // coursename is an alias
+        //         }
+        //     } = company;
+        //     console.log(courseName)
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

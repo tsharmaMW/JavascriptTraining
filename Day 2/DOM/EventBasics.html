@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = function(){
+        //     setInterval(() => {
+        //         document.getElementById("button").click();    
+        //     }, 1);
+        // }
+        function ClickHandler(){
+            let container = document.getElementById("beverages");
+            let newItem = document.createElement("li");
+            newItem.innerText = document.getElementById("txtBeverage").value;
+            container.appendChild(newItem)
+        }
+        function InputHandler(e = event){
+            console.log(e.target.value);
+        }
+        function handleListClick(e = event){
+            let container = document.getElementById("beverages");
+            container.removeChild(e.target)
+        }
+    </script>
+</head>
+<body>
+    <label for="txtBeverage">Enter a beverage:</label>
+    <input type="text" id="txtBeverage" oninput="InputHandler()"/>
+    <!-- <input type="text" id="txtBeverage" oninput="(e)=>{console.log(e.target.value)}"/> -->
+    <ul id="beverages" onclick="handleListClick()">
+        <li>Tea</li>
+        <li>Coffee</li>
+    </ul>
+    <input type="button" id="button" value="Add Item !" onclick="ClickHandler()"/>
+</body>
+</html>

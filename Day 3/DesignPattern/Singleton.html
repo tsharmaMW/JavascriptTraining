@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // https://www.patterns.dev/vanilla/singleton-pattern
+        // var company = { name: "Mathworks"};
+
+        // var singleTon = (function () {
+        //     return {
+        //         name: "Mathworks",
+        //         city: "Bangalore"
+        //     }
+        // })();
+
+        function GetInstance(){
+            this.instance = this.instance || null;
+            if(this.instance == null){
+                this.instance =  {
+                    name: "Mathworks",
+                    city: "Bangalore"
+                };
+                return this.instance;
+            }else {
+                return this.instance;
+            }
+        }
+
+        let i = GetInstance();
+        console.log(i);
+        i.city = "Hyderabad";
+        console.log(i);//hyderabad
+
+        let j = GetInstance();
+        console.log(j);//bangalore --> Not singleton
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

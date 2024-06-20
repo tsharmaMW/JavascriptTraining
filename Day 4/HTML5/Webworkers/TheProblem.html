@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function HandleHeavyLifting(){
+            let arr = [];
+            for (let i = 0; i< 10000; index++){
+                arr[index] = [];
+                for (let j = 0; j< 10000; j++){
+                    arr[index][j] = Math.random();
+                }
+            }
+            console.log(arr[3000][3000])
+        }
+        function ClickHandler(){
+            console.log("You clicked")
+        }
+    </script>
+</head>
+<body>
+    <button onclick="HandleHeavyLifting()"> Start heavy lifting task</button>
+    <button onclick="ClickHandler()"> Click me</button>
+</body>
+</html>

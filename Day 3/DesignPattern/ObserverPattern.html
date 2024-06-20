@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class Guest {
+            name = "";
+            constructor(name){
+                this.name = name;
+            }
+            Handler(){
+                console.log(`${this.name} got notified!`)
+            }
+        }
+
+        class BirthdayEvent{
+            guests = [];
+            
+            subscribe(theGuest){
+                this.guests.push(theGuest);
+            }
+
+            unsubscribe(theGuest){
+                this.guests = this.guests.filter(g=>g.name != theGuest.name);
+            }
+
+            notify(){
+                for (const guest of this.guests){
+                    guest.Handler();
+                }
+            }
+        }
+
+        let firstGuest = new Guest("John");
+        let secondGuest = new Guest("Carter");
+        let thirdGuest = new Guest("Peter");
+        let fourthGuest = new Guest("Parker");
+
+        var myBirthday = new BirthdayEvent();
+        myBirthday.subscribe(firstGuest);
+        myBirthday.subscribe(secondGuest);
+        myBirthday.subscribe(thirdGuest);
+        myBirthday.unsubscribe(firstGuest);
+
+        myBirthday.notify();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

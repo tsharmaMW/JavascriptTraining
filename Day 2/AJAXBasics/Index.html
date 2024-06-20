@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="getData.js"></script>
+</head>
+<body>
+    <h1>All titles</h1>
+    <ul id="titlesList"></ul>
+    <img src="https://acegif.com/wp-content/uploads/loading-45.gif" id="loader" alt="" style="width: 50px;">
+    <p id = "error"></p>
+    <script>
+        console.log("started");
+        GetData(function(err, postsJSON){
+            let loader = document.getElementById("loader");
+            let error = document.getElementById("error");
+            loader.style.display = "none"
+            if(postsJSON){
+                let titlesList = document.getElementById("titlesList");
+                for (const post of postsJSON){
+                    //forEach is a function. So for larger size of array, iteration would be
+                    // costly as each time the function is called, it would be put over a call stack
+                    let newItem = document.createElement("li");
+                    newItem.textContent = post.title;
+                    titlesList.appendChild(newItem);
+                }
+            }else {
+                error.innerText = err;
+                error.style.color = "red"
+            };
+        });
+        console.log("ended");
+    </script>
+</body>
+</html>
